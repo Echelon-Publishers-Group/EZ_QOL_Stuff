@@ -1,0 +1,19 @@
+EZ_QOL_Stuff - third-party model credits
+========================================
+
+1) "Delivery drone Gameready (Free)"
+   Author: Egor Likhachev (@egor_likhachev)
+   Source: Sketchfab - https://sketchfab.com/3d-models/delivery-drone-gameready-free-c22b1060860e47b4adbc1e9007b70b18
+   License: CC BY 4.0 - https://creativecommons.org/licenses/by/4.0/
+   Modified by Echelon Publishers Group: converted for DayZ, split meshes, retextured
+
+2) "Military Rugged PDA / Tactical Tablet"
+   Author: Snupp (@snuupp)
+   Source: Sketchfab - https://sketchfab.com/3d-models/military-rugged-pda-tactical-tablet-24b5e19dcb9e4970b5c211787c7f3fd0
+   License: CC BY 4.0 - https://creativecommons.org/licenses/by/4.0/
+   Modified by Echelon Publishers Group: converted for DayZ, split meshes, retextured
+
+EZ_QOL_Garage (data/garage) - based on "Cloth Hangar" by CommonSpence
+   Source: Sketchfab - https://sketchfab.com/3d-models/cloth-hangar-dd53c69aa57b4c048d32363149b9966c
+   License: CC BY 4.0 - https://creativecommons.org/licenses/by/4.0/
+   Modified by Echelon Publishers Group: rescaled (non-uniform) to a 4.6 x 7.4 x 4.66 m vehicle garage, LODs/collision/memory points added, textures converted for DayZ

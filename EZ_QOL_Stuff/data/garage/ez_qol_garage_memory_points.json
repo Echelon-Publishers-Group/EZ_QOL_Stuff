@@ -1,0 +1,60 @@
+{
+ "name": "ez_qol_garage",
+ "scale_xyz": [
+  0.21044926342757797,
+  0.2916600977455463,
+  0.455
+ ],
+ "dims": [
+  4.6,
+  7.4,
+  4.659
+ ],
+ "clearance_min": 3.547,
+ "lod1_tris": 1432,
+ "lod2_tris": 715,
+ "lod4_tris": 358,
+ "geometry_components": 14,
+ "memory": {
+  "vehicle_spot": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "vehicle_dir": [
+   0.0,
+   -2.0,
+   0.0
+  ],
+  "codelock_pos": [
+   1.75,
+   -3.75,
+   1.2
+  ],
+  "action_point": [
+   0.0,
+   -3.7,
+   1.0
+  ],
+  "invView": [
+   7.0,
+   -11.0,
+   4.5
+  ],
+  "ce_center": [
+   0.0,
+   0.0,
+   2.33
+  ],
+  "boundingbox_min": [
+   -2.3,
+   -3.7,
+   -0.0
+  ],
+  "boundingbox_max": [
+   2.3,
+   3.7,
+   4.659
+  ]
+ }
+}

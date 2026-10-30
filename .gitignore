@@ -1,0 +1,39 @@
+# Keys and signatures (never commit)
+*.bikey
+*.biprivatekey
+*.bisign
+keys/
+# Packed builds
+*.pbo
+*.ebo
+@*/
+build/
+# Server configs and server-specific data
+serverDZ.cfg
+server*.cfg
+BEServer*.cfg
+beserver*.cfg
+battleye/
+profiles/
+mpmissions/
+*.ServerProfile
+# Server-specific economy edits (the shipped sample snippet is kept)
+types.xml
+cfgeconomycore.xml
+cfgspawnabletypes.xml
+events.xml
+# Logs and crash dumps
+*.log
+*.RPT
+*.ADM
+*.mdmp
+logs/
+# Secrets
+.env
+*.pem
+*.key
+# OS / editor
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc

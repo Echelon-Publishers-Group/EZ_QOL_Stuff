@@ -1,0 +1,89 @@
+FrameWidgetClass DroneAppRoot {
+ position 0 0
+ size 1 1
+ hexactpos 0
+ vexactpos 0
+ hexactsize 0
+ vexactsize 0
+ {
+  PanelWidgetClass Background {
+   position 0 0
+   size 1 1
+   color 0.08 0.1 0.12 0.95
+   style rover_sim_colorable
+  }
+  TextWidgetClass Title {
+   position 0.03 0.02
+   size 0.6 0.07
+   text "Drone Delivery"
+   font "gui/fonts/metron28"
+  }
+  TextWidgetClass BalanceText {
+   position 0.62 0.02
+   size 0.35 0.07
+   text "Balance: -"
+   "text halign" right
+  }
+  PanelWidgetClass WindBanner {
+   visible 0
+   position 0.03 0.1
+   size 0.94 0.06
+   color 0.75 0.35 0.05 0.9
+   style rover_sim_colorable
+   {
+    TextWidgetClass WindText {
+     position 0.01 0
+     size 0.98 1
+     text "High wind / sandstorm"
+     "text valign" center
+    }
+   }
+  }
+  ButtonWidgetClass Tab0 {
+   position 0.03 0.18
+   size 0.225 0.07
+   text "Medical"
+  }
+  ButtonWidgetClass Tab1 {
+   position 0.268 0.18
+   size 0.225 0.07
+   text "Ammo"
+  }
+  ButtonWidgetClass Tab2 {
+   position 0.506 0.18
+   size 0.225 0.07
+   text "Surprise"
+  }
+  ButtonWidgetClass Tab3 {
+   position 0.744 0.18
+   size 0.225 0.07
+   text "Food"
+  }
+  TextListboxWidgetClass ItemList {
+   position 0.03 0.27
+   size 0.94 0.45
+   lines 10
+  }
+  TextWidgetClass PriceText {
+   position 0.03 0.74
+   size 0.45 0.06
+   text "Price: -"
+  }
+  TextWidgetClass CooldownText {
+   position 0.52 0.74
+   size 0.45 0.06
+   text "Ready"
+   "text halign" right
+  }
+  TextWidgetClass StatusText {
+   position 0.03 0.81
+   size 0.94 0.06
+   text "Idle"
+  }
+  ButtonWidgetClass OrderButton {
+   position 0.3 0.89
+   size 0.4 0.08
+   text "ORDER"
+  }
+ }
+}

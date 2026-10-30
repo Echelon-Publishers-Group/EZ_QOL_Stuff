@@ -1,0 +1,23 @@
+ButtonWidgetClass AppButton {
+ size 160 160
+ hexactsize 1
+ vexactsize 1
+ color 0.15 0.2 0.25 1
+ style Default
+ {
+  ImageWidgetClass AppIcon {
+   ignorepointer 1
+   position 0.5 0.12
+   size 0.5 0.5
+   halign center_ref
+   mode blend
+  }
+  TextWidgetClass AppName {
+   ignorepointer 1
+   position 0 0.72
+   size 1 0.22
+   text "App"
+   "text halign" center
+  }
+ }
+}

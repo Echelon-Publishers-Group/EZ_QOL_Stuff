@@ -1,0 +1,223 @@
+{
+    "version": 1,
+    "enabled": true,
+    "altitudeMin": 40,
+    "altitudeMax": 60,
+    "speed": 15,
+    "spawnDistance": 800,
+    "hoverTime": 4,
+    "windCancelMs": 18,
+    "windWarnMs": 12,
+    "windDriftFactor": 0.15,
+    "crashChancePerMs": 5e-05,
+    "refundOnCrash": false,
+    "crateOnCrash": true,
+    "globalCooldownSec": 300,
+    "blockInSafezone": true,
+    "blockInTerritory": false,
+    "CrateEmptyGraceSec": 30,
+    "CrateMaxLifetimeSec": 900,
+    "logging": true,
+    "categories": [
+        {
+            "id": "medical",
+            "name": "Medical / Surgery",
+            "icon": "EZ_QOL_Stuff/gui/icons/medical.edds",
+            "price": 2500,
+            "cooldownSec": 900,
+            "pickOne": false,
+            "enabled": true,
+            "items": [
+                {
+                    "className": "TerjeSurgicalKit",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "TerjeBandageHemostatic",
+                    "qty": 2,
+                    "weight": 1
+                },
+                {
+                    "className": "TerjeInjectorPromidol",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "TerjeAmpouleAmoxivan",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "TerjeSyringeNew",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "TerjePillsNimesulid",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "TerjeFirstAidKitIndividual_Green",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "BandageDressing",
+                    "qty": 4,
+                    "weight": 1
+                },
+                {
+                    "className": "Morphine",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "Epinephrine",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "SalineBagIV",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "TetracyclineAntibiotics",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "PainkillerTablets",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "CharcoalTablets",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "SurgicalGloves_Blue",
+                    "qty": 1,
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "id": "ammo",
+            "name": "Ammo Drop",
+            "icon": "EZ_QOL_Stuff/gui/icons/ammo.edds",
+            "price": 3000,
+            "cooldownSec": 1200,
+            "pickOne": false,
+            "enabled": true,
+            "items": [
+                {
+                    "className": "AmmoBox_556x45_20Rnd",
+                    "qty": 2,
+                    "weight": 1
+                },
+                {
+                    "className": "AmmoBox_762x39_20Rnd",
+                    "qty": 2,
+                    "weight": 1
+                },
+                {
+                    "className": "AmmoBox_9x19_25rnd",
+                    "qty": 2,
+                    "weight": 1
+                },
+                {
+                    "className": "AmmoBox_12gaPellets_10Rnd",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "Ammo_308Win",
+                    "qty": 1,
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "id": "surprise",
+            "name": "Surprise",
+            "icon": "EZ_QOL_Stuff/gui/icons/surprise.edds",
+            "price": 1500,
+            "cooldownSec": 1800,
+            "pickOne": true,
+            "enabled": true,
+            "items": [
+                {
+                    "className": "NVGoggles",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "M4A1",
+                    "qty": 1,
+                    "weight": 2
+                },
+                {
+                    "className": "Binoculars",
+                    "qty": 1,
+                    "weight": 5
+                },
+                {
+                    "className": "Rice",
+                    "qty": 2,
+                    "weight": 10
+                },
+                {
+                    "className": "CanOpener",
+                    "qty": 1,
+                    "weight": 10
+                }
+            ]
+        },
+        {
+            "id": "food",
+            "name": "Food & Water",
+            "icon": "EZ_QOL_Stuff/gui/icons/food.edds",
+            "price": 800,
+            "cooldownSec": 600,
+            "pickOne": false,
+            "enabled": true,
+            "items": [
+                {
+                    "className": "BakedBeansCan",
+                    "qty": 2,
+                    "weight": 1
+                },
+                {
+                    "className": "SpaghettiCan",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "TacticalBaconCan",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "WaterBottle",
+                    "qty": 2,
+                    "weight": 1
+                },
+                {
+                    "className": "Canteen",
+                    "qty": 1,
+                    "weight": 1
+                },
+                {
+                    "className": "CanOpener",
+                    "qty": 1,
+                    "weight": 1
+                }
+            ]
+        }
+    ],
+    "requireTablet": true
+}

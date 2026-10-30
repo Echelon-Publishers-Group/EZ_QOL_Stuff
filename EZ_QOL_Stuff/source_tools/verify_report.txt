@@ -1,0 +1,66 @@
+
+== ez_qol_drone.p3d MLOD v 257 LODs 7
+ [LOD 1] res=1 verts=3808 faces=6889 size(xyz,m)=[1.099, 0.951, 0.369] min=[-0.55, -0.475, -0.185] max=[0.55, 0.475, 0.185]
+   selections: ['body', 'camo', 'cargo', 'rotor_1', 'rotor_2', 'rotor_3', 'rotor_4']  taggs: ['#UVSet#']
+ [LOD 2] res=2 verts=1678 faces=2930 size(xyz,m)=[1.103, 0.952, 0.366] min=[-0.551, -0.476, -0.182] max=[0.551, 0.476, 0.185]
+   selections: ['body', 'camo', 'cargo', 'rotor_1', 'rotor_2', 'rotor_3', 'rotor_4']  taggs: ['#UVSet#']
+ [LOD 4] res=4 verts=944 faces=1493 size(xyz,m)=[1.103, 0.951, 0.354] min=[-0.553, -0.476, -0.176] max=[0.55, 0.475, 0.178]
+   selections: ['body', 'camo', 'cargo', 'rotor_1', 'rotor_2', 'rotor_3', 'rotor_4']  taggs: ['#UVSet#']
+ [ViewGeometry] res=6e+15 verts=80 faces=92 size(xyz,m)=[1.056, 0.908, 0.357] min=[-0.528, -0.454, -0.185] max=[0.528, 0.454, 0.173]
+   selections: ['Component01', 'Component02', 'Component03', 'Component04', 'Component05', 'Component06', 'body', 'cargo', 'rotor_1', 'rotor_2', 'rotor_3', 'rotor_4']  taggs: ['#UVSet#']
+   convex/outward-winding violations: 0
+ [Geometry] res=1e+13 verts=80 faces=92 size(xyz,m)=[1.056, 0.908, 0.357] min=[-0.528, -0.454, -0.185] max=[0.528, 0.454, 0.173]
+   selections: ['Component01', 'Component02', 'Component03', 'Component04', 'Component05', 'Component06', 'body', 'cargo', 'rotor_1', 'rotor_2', 'rotor_3', 'rotor_4']  taggs: ['#UVSet#', '#Mass#', '#Property#']
+   mass total 6.00 kg
+   property autocenter = 0
+   convex/outward-winding violations: 0
+ [FireGeometry] res=7e+15 verts=80 faces=92 size(xyz,m)=[1.056, 0.908, 0.357] min=[-0.528, -0.454, -0.185] max=[0.528, 0.454, 0.173]
+   selections: ['Component01', 'Component02', 'Component03', 'Component04', 'Component05', 'Component06', 'body', 'cargo', 'rotor_1', 'rotor_2', 'rotor_3', 'rotor_4']  taggs: ['#UVSet#']
+   convex/outward-winding violations: 0
+ [Memory] res=1e+15 verts=15 faces=0 size(xyz,m)=[0.709, 1.782, 0.812] min=[-0.354, -1.502, -0.205] max=[0.354, 0.28, 0.608]
+   selections: ['cargo_center', 'cargo_drop', 'ce_center', 'invview', 'light_dir', 'light_pos', 'rotor_1_axis', 'rotor_1_axis_begin', 'rotor_1_axis_end', 'rotor_2_axis', 'rotor_2_axis_begin', 'rotor_2_axis_end', 'rotor_3_axis', 'rotor_3_axis_begin', 'rotor_3_axis_end', 'rotor_4_axis', 'rotor_4_axis_begin', 'rotor_4_axis_end', 'sound_pos']  taggs: []
+     cargo_center [[-0.0, -0.0953, -0.121]]
+     cargo_drop [[-0.0, -0.0953, -0.2046]]
+     ce_center [[0.0, 0.0, 0.0]]
+     invview [[-0.0, -1.502, 0.6078]]
+     light_dir [[-0.0, -0.4535, 0.0458]]
+     light_pos [[-0.0, -0.3535, 0.0458]]
+     rotor_1_axis [[-0.3543, 0.28, 0.12], [-0.3543, 0.28, 0.16]]
+     rotor_1_axis_begin [[-0.3543, 0.28, 0.12]]
+     rotor_1_axis_end [[-0.3543, 0.28, 0.16]]
+     rotor_2_axis [[0.3543, 0.28, 0.12], [0.3543, 0.28, 0.16]]
+     rotor_2_axis_begin [[0.3543, 0.28, 0.12]]
+     rotor_2_axis_end [[0.3543, 0.28, 0.16]]
+     rotor_3_axis [[-0.3543, -0.28, 0.12], [-0.3543, -0.28, 0.16]]
+     rotor_3_axis_begin [[-0.3543, -0.28, 0.12]]
+     rotor_3_axis_end [[-0.3543, -0.28, 0.16]]
+     rotor_4_axis [[0.3543, -0.28, 0.12], [0.3543, -0.28, 0.16]]
+     rotor_4_axis_begin [[0.3543, -0.28, 0.12]]
+     rotor_4_axis_end [[0.3543, -0.28, 0.16]]
+     sound_pos [[-0.0, -0.102, 0.0678]]
+
+== ez_qol_tablet.p3d MLOD v 257 LODs 7
+ [LOD 1] res=1 verts=408 faces=736 size(xyz,m)=[0.017, 0.25, 0.175] min=[-0.008, -0.125, -0.088] max=[0.008, 0.125, 0.088]
+   selections: ['body', 'camo', 'screen']  taggs: ['#UVSet#']
+ [LOD 2] res=2 verts=257 faces=442 size(xyz,m)=[0.017, 0.25, 0.175] min=[-0.008, -0.125, -0.087] max=[0.008, 0.125, 0.087]
+   selections: ['body', 'camo', 'screen']  taggs: ['#UVSet#']
+ [LOD 4] res=4 verts=143 faces=222 size(xyz,m)=[0.017, 0.25, 0.175] min=[-0.008, -0.125, -0.087] max=[0.008, 0.125, 0.087]
+   selections: ['body', 'camo', 'screen']  taggs: ['#UVSet#']
+ [ViewGeometry] res=6e+15 verts=8 faces=6 size(xyz,m)=[0.017, 0.25, 0.175] min=[-0.008, -0.125, -0.088] max=[0.008, 0.125, 0.088]
+   selections: ['Component01', 'body']  taggs: ['#UVSet#']
+   convex/outward-winding violations: 0
+ [Geometry] res=1e+13 verts=8 faces=6 size(xyz,m)=[0.017, 0.25, 0.175] min=[-0.008, -0.125, -0.088] max=[0.008, 0.125, 0.088]
+   selections: ['Component01', 'body']  taggs: ['#UVSet#', '#Mass#', '#Property#']
+   mass total 1.00 kg
+   property autocenter = 0
+   convex/outward-winding violations: 0
+ [FireGeometry] res=7e+15 verts=8 faces=6 size(xyz,m)=[0.017, 0.25, 0.175] min=[-0.008, -0.125, -0.088] max=[0.008, 0.125, 0.088]
+   selections: ['Component01', 'body']  taggs: ['#UVSet#']
+   convex/outward-winding violations: 0
+ [Memory] res=1e+15 verts=5 faces=0 size(xyz,m)=[0.367, 0.25, 0.175] min=[-0.008, -0.125, -0.088] max=[0.358, 0.125, 0.088]
+   selections: ['boundingbox_max', 'boundingbox_min', 'ce_center', 'invview', 'screen_center']  taggs: []
+     boundingbox_max [[0.0085, 0.125, 0.0875]]
+     boundingbox_min [[-0.0085, -0.125, -0.0875]]
+     ce_center [[0.0, 0.0, 0.0]]
+     invview [[0.3585, 0.0006, 0.0004]]
+     screen_center [[0.0085, 0.0006, 0.0004]]

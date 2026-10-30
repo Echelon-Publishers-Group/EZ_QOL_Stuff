@@ -10,5 +10,5 @@
 - Coexistence with Virtual Garage System: separate RPC names and storage folder.
 - Sample configs: `DroneDelivery.sample.json`, `types_drone_snippet.xml`.
 ### Known / to verify
-- The `DZ_Weapons_Explosives` addon name (for the M18 smoke marker) is unverified.
+- Verified `DZ_Weapons_Explosives` as the correct base-game addon for the M18 smoke marker (it is the CfgPatches of the vanilla weapons/explosives config).
 - Models ship as MLOD; check the drone's front orientation in game.

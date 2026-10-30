@@ -12,7 +12,7 @@ class CfgPatches
 			"DZ_Data",
 			"DZ_Scripts",
 			"DZ_Gear_Camping",
-			"DZ_Weapons_Explosives",        // M18 smoke for EZ_QOL_DroneMarker  [addon name UNVERIFIED]
+			"DZ_Weapons_Explosives",        // M18 smoke for EZ_QOL_DroneMarker
 			"JM_CF_Scripts",
 			"DayZExpansion_Core_Scripts",
 			"DayZExpansion_Vehicles_Scripts",

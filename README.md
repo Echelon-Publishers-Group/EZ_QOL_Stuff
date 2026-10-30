@@ -58,7 +58,7 @@ Medical deliveries use **Terje Medicine** item classes (e.g. `TerjeSurgicalKit`)
 ## Compatibility
 - Works alongside **Virtual Garage System**. There's no shared data, and the hologram and placement hooks apply only to `EZ_QOL_GarageKit`.
 - Requires the Expansion modules listed above. Other garage or storage mods that override the same vanilla actions are untested.
-- Built for DayZ private community servers (modded). The `DZ_Weapons_Explosives` addon name is still being verified.
+- Built for DayZ private community servers (modded).
 
 ## Credits
 - **"Delivery drone Gameready (Free)"** by **Egor Likhachev**, CC BY 4.0, https://sketchfab.com/3d-models/delivery-drone-gameready-free-c22b1060860e47b4adbc1e9007b70b18 (modified: converted for DayZ, split meshes, retextured)
@@ -68,6 +68,5 @@ Medical deliveries use **Terje Medicine** item classes (e.g. `TerjeSurgicalKit`)
 - Built for DayZ. DayZ is a trademark of Bohemia Interactive a.s.; this project isn't affiliated with or endorsed by Bohemia Interactive. Mod content follows Bohemia's DayZ modding licence terms.
 
 ## License
-See `LICENSE` (to be decided). Third-party models remain under CC BY 4.0.
 
-© Echelon Publishers Group
+Original work is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/): share and adapt it with credit to Echelon Publishers Group, non-commercially, under the same license. The credited 3D models stay under CC BY 4.0. See [LICENSE](LICENSE).

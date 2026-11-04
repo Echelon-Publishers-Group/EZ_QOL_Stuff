@@ -1,0 +1,152 @@
+FrameWidgetClass AttackDroneHudRoot {
+ ignorepointer 1
+ position 0 0
+ size 1 1
+ hexactpos 0
+ vexactpos 0
+ hexactsize 0
+ vexactsize 0
+ priority 800
+ {
+  FrameWidgetClass Reticle {
+   ignorepointer 1
+   position 0.5 0.5
+   size 96 96
+   halign center_ref
+   valign center_ref
+   hexactpos 0
+   vexactpos 0
+   hexactsize 1
+   vexactsize 1
+   {
+    PanelWidgetClass RetTop {
+     ignorepointer 1
+     position 0.485 0
+     size 0.03 0.3
+     color 0.95 0.55 0.12 1
+     style rover_sim_colorable
+    }
+    PanelWidgetClass RetBottom {
+     ignorepointer 1
+     position 0.485 0.7
+     size 0.03 0.3
+     color 0.95 0.55 0.12 1
+     style rover_sim_colorable
+    }
+    PanelWidgetClass RetLeft {
+     ignorepointer 1
+     position 0 0.485
+     size 0.3 0.03
+     color 0.95 0.55 0.12 1
+     style rover_sim_colorable
+    }
+    PanelWidgetClass RetRight {
+     ignorepointer 1
+     position 0.7 0.485
+     size 0.3 0.03
+     color 0.95 0.55 0.12 1
+     style rover_sim_colorable
+    }
+    PanelWidgetClass RetDot {
+     ignorepointer 1
+     position 0.47 0.47
+     size 0.06 0.06
+     color 1 1 1 1
+     style rover_sim_colorable
+    }
+   }
+  }
+  PanelWidgetClass HudPanel {
+   ignorepointer 1
+   position 0.5 0.72
+   size 420 92
+   halign center_ref
+   hexactpos 0
+   vexactpos 0
+   hexactsize 1
+   vexactsize 1
+   color 0.06 0.07 0.09 0.88
+   style rover_sim_colorable
+   {
+    PanelWidgetClass HudAccent {
+     ignorepointer 1
+     position 0 0
+     size 1 0.04
+     color 0.95 0.55 0.12 1
+     style rover_sim_colorable
+    }
+    TextWidgetClass HudStatus {
+     ignorepointer 1
+     position 0.03 0.08
+     size 0.94 0.36
+     text "Armed"
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 17
+     "text halign" center
+     "text valign" center
+     color 1 1 1 1
+    }
+    PanelWidgetClass LockBarBg {
+     ignorepointer 1
+     position 0.03 0.5
+     size 0.94 0.18
+     color 0.03 0.04 0.05 0.92
+     style rover_sim_colorable
+     {
+      PanelWidgetClass LockBarFill {
+       ignorepointer 1
+       position 0 0
+       size 0 1
+       color 0.95 0.55 0.12 1
+       style rover_sim_colorable
+      }
+     }
+    }
+    PanelWidgetClass GraceBarBg {
+     ignorepointer 1
+     position 0.03 0.76
+     size 0.94 0.1
+     color 0.03 0.04 0.05 0.92
+     style rover_sim_colorable
+     {
+      PanelWidgetClass GraceBarFill {
+       ignorepointer 1
+       position 0 0
+       size 1 1
+       color 0.55 0.9 0.55 1
+       style rover_sim_colorable
+      }
+     }
+    }
+   }
+  }
+  PanelWidgetClass WarnBanner {
+   visible 0
+   ignorepointer 1
+   position 0.5 0.18
+   size 560 64
+   halign center_ref
+   hexactpos 0
+   vexactpos 0
+   hexactsize 1
+   vexactsize 1
+   color 0.55 0.16 0.14 0.92
+   style rover_sim_colorable
+   {
+    TextWidgetClass WarnText {
+     ignorepointer 1
+     position 0 0
+     size 1 1
+     text "#STR_EZ_QOL_AD_INCOMING"
+     font "gui/fonts/metron28"
+     "exact text" 1
+     "exact text size" 24
+     "text halign" center
+     "text valign" center
+     color 1 1 1 1
+    }
+   }
+  }
+ }
+}

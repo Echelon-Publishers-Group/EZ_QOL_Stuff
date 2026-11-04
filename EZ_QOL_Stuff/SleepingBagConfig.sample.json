@@ -1,0 +1,22 @@
+{
+    "Enabled": 1,
+    "MaxBagsPerPlayer": 1,
+    "HealthLossPerRespawn": 20,
+    "DecayPerHour": 0.5,
+    "AllowOthersLoot": 1,
+    "AllowOthersPackOrDestroy": 1,
+    "RepairEnabled": 1,
+    "EnableFreshSpawn": 1,
+    "EnableAliveLoginSpawn": 1,
+    "ValidateBagExists": 1,
+    "BagValidationRadius": 1.5,
+    "AlreadyAtBagRadius": 5.0,
+    "SpawnHeightOffset": 0.05,
+    "EnableGenericPackActionHook": 1,
+    "OwnerNameTags": 1,
+    "RespawnCooldownMinutes": 30,
+    "EnemyBlockRadius": 150,
+    "AllowInPvEZones": 1,
+    "AllowInSafeZones": 0,
+    "SpawnHealthPercent": 100
+}

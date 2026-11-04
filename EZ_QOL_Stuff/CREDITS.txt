@@ -17,3 +17,13 @@ EZ_QOL_Garage (data/garage) - based on "Cloth Hangar" by CommonSpence
    Source: Sketchfab - https://sketchfab.com/3d-models/cloth-hangar-dd53c69aa57b4c048d32363149b9966c
    License: CC BY 4.0 - https://creativecommons.org/licenses/by/4.0/
    Modified by Echelon Publishers Group: rescaled (non-uniform) to a 4.6 x 7.4 x 4.66 m vehicle garage, LODs/collision/memory points added, textures converted for DayZ
+
+
+Attack drone (lock-on strike) module - Echelon Publishers Group team.
+
+Sleeping bag (EZ_SleepingBag_Packed / EZ_SleepingBag_Deployed) - model to be based on "SLEEP BAG" by Igor Rodrigues
+   Source: Sketchfab - https://sketchfab.com/3d-models/sleep-bag-ccd1976fba4445cdb4d6769dbf4db653
+   License: CC BY 4.0 - https://creativecommons.org/licenses/by/4.0/
+   Modified by Echelon Publishers Group: to be converted for DayZ (v0.11 ships vanilla placeholder models)
+
+EZ_QOL_Stuff scripts, configs and features - Echelon Publishers Group team.

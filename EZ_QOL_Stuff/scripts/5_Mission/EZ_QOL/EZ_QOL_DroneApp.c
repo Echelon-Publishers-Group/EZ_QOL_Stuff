@@ -11,7 +11,11 @@ class EZ_QOL_DroneApp: EZ_QOL_TabletApp
 	protected Widget m_WindBanner;
 	protected TextWidget m_WindText;
 	protected ButtonWidget m_OrderBtn;
+	protected Widget m_CooldownChip;
+	protected bool m_OrderEnabled;
+	protected bool m_OrderHover;
 	protected string m_SelectedId;
+	protected int m_OpenMs;
 
 	override string GetId() { return "drone"; }
 	override string GetTitle() { return "Drone Delivery"; }
@@ -34,9 +38,11 @@ class EZ_QOL_DroneApp: EZ_QOL_TabletApp
 		m_WindBanner = root.FindAnyWidget("WindBanner");
 		m_WindText   = TextWidget.Cast(root.FindAnyWidget("WindText"));
 		m_OrderBtn   = ButtonWidget.Cast(root.FindAnyWidget("OrderButton"));
+		m_CooldownChip = root.FindAnyWidget("CooldownChip");
 
 
 		EZ_QOL_DroneClient.Get().m_App = this;
+		m_OpenMs = GetGame().GetTime();
 		EZ_QOL_DroneClient.Get().RequestCatalog();
 		GetGame().GetCallQueue(CALL_CATEGORY_GUI).CallLater(Refresh, 1000, true);
 		Refresh();
@@ -99,6 +105,30 @@ class EZ_QOL_DroneApp: EZ_QOL_TabletApp
 		return false;
 	}
 
+	// Visual only: ORDER button colour for disabled / normal / hover.
+	protected void UpdateOrderColor()
+	{
+		if (!m_OrderBtn)
+			return;
+		if (!m_OrderEnabled)
+			m_OrderBtn.SetColor(ARGB(255, 70, 74, 80));
+		else if (m_OrderHover)
+			m_OrderBtn.SetColor(ARGB(255, 255, 150, 50));
+		else
+			m_OrderBtn.SetColor(ARGB(255, 224, 120, 20));
+	}
+
+	bool OnHoverWidget(Widget w, bool enter)
+	{
+		if (m_OrderBtn && w == m_OrderBtn)
+		{
+			m_OrderHover = enter;
+			UpdateOrderColor();
+			return true;
+		}
+		return false;
+	}
+
 	static string FormatTime(int sec)
 	{
 		int m = sec / 60;
@@ -123,7 +153,14 @@ class EZ_QOL_DroneApp: EZ_QOL_TabletApp
 			if (cat && t < cat.categories.Count())
 			{
 				m_Tabs[t].Show(true);
-				m_Tabs[t].SetText(cat.categories[t].name);
+				TextWidget tl = TextWidget.Cast(m_Tabs[t].FindAnyWidget("Tab" + t.ToString() + "Label"));
+				if (tl)
+					tl.SetText(cat.categories[t].name);
+				bool isSel = cat.categories[t].id == m_SelectedId || (m_SelectedId == "" && t == 0);
+				if (isSel)
+					m_Tabs[t].SetColor(ARGB(255, 224, 120, 20));
+				else
+					m_Tabs[t].SetColor(ARGB(255, 41, 48, 59));
 			}
 			else
 			{
@@ -165,9 +202,16 @@ class EZ_QOL_DroneApp: EZ_QOL_TabletApp
 		{
 			int cd = cl.CooldownLeftNow(sel);
 			if (cd > 0)
-				m_Cooldown.SetText("Cooldown: " + EZ_QOL_DroneApp.FormatTime(cd));
+				m_Cooldown.SetText("Cooldown " + EZ_QOL_DroneApp.FormatTime(cd));
 			else
 				m_Cooldown.SetText("Ready");
+			if (m_CooldownChip)
+			{
+				if (cd > 0)
+					m_CooldownChip.SetColor(ARGB(242, 150, 95, 20));
+				else
+					m_CooldownChip.SetColor(ARGB(242, 40, 115, 56));
+			}
 		}
 		if (m_Status)
 		{
@@ -179,6 +223,12 @@ class EZ_QOL_DroneApp: EZ_QOL_TabletApp
 			}
 			if (cat && cat.blockedReason != "")
 				st = cat.blockedReason;
+			if (!cat)
+			{
+				st = "Loading catalog...";
+				if (GetGame().GetTime() - m_OpenMs > 10000)
+					st = "No reply from server - close and reopen the app";
+			}
 			m_Status.SetText(st);
 		}
 		if (m_OrderBtn)
@@ -189,6 +239,8 @@ class EZ_QOL_DroneApp: EZ_QOL_TabletApp
 			if (cat && cat.blockedReason != "")
 				canOrder = false;
 			m_OrderBtn.Enable(canOrder);
+			m_OrderEnabled = canOrder;
+			UpdateOrderColor();
 		}
 		bool warn = cl.m_WindWarning;
 		if (cat && cat.windWarning)

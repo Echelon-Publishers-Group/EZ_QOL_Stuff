@@ -1,58 +1,139 @@
 FrameWidgetClass TabletShellRoot {
- position 0.5 0.5
- size 0.62 0.72
- halign center_ref
- valign center_ref
+ position 0.2 0.175
+ size 0.6 0.65
+ priority 900
  hexactpos 0
  vexactpos 0
  hexactsize 0
  vexactsize 0
  {
   PanelWidgetClass Bezel {
+   ignorepointer 1
    position 0 0
    size 1 1
-   color 0.03 0.03 0.04 1
+   color 0.02 0.02 0.025 1
    style rover_sim_colorable
   }
   PanelWidgetClass Screen {
-   position 0.03 0.04
-   size 0.94 0.92
-   color 0.06 0.08 0.1 1
+   position 0.03 0.045
+   size 0.94 0.91
+   color 0.06 0.075 0.095 0.96
    style rover_sim_colorable
    {
+    PanelWidgetClass HeaderBar {
+     ignorepointer 1
+     position 0 0
+     size 1 0.1
+     color 0.11 0.13 0.16 1
+     style rover_sim_colorable
+    }
+    PanelWidgetClass HeaderAccent {
+     ignorepointer 1
+     position 0 0.1
+     size 1 0.005
+     color 0.95 0.55 0.12 1
+     style rover_sim_colorable
+    }
     TextWidgetClass TitleText {
-     position 0.02 0.01
-     size 0.6 0.07
+     ignorepointer 1
+     position 0.025 0
+     size 0.6 0.1
      text "EZ Tablet"
      font "gui/fonts/metron28"
+     "exact text" 1
+     "exact text size" 24
+     "text valign" center
+     color 1 1 1 1
     }
     ButtonWidgetClass BackButton {
      visible 0
-     position 0.66 0.01
-     size 0.15 0.07
-     text "Back"
+     position 0.76 0.018
+     size 0.14 0.064
+     color 0.16 0.19 0.23 1
+     style Default
+     {
+      TextWidgetClass BackLabel {
+       ignorepointer 1
+       position 0 0
+       size 1 1
+       text "Back"
+       font "gui/fonts/sdf_MetronBook24"
+       "exact text" 1
+       "exact text size" 17
+       "text halign" center
+       "text valign" center
+      }
+     }
     }
     ButtonWidgetClass CloseButton {
-     position 0.83 0.01
-     size 0.15 0.07
-     text "Close"
+     position 0.92 0.018
+     size 0.06 0.064
+     color 0.55 0.16 0.14 1
+     style Default
+     {
+      TextWidgetClass CloseLabel {
+       ignorepointer 1
+       position 0 0
+       size 1 1
+       text "X"
+       font "gui/fonts/metron28"
+       "exact text" 1
+       "exact text size" 18
+       "text halign" center
+       "text valign" center
+      }
+     }
     }
     FrameWidgetClass Home {
-     position 0.02 0.1
-     size 0.96 0.88
+     position 0.03 0.14
+     size 0.94 0.76
      {
       WrapSpacerWidgetClass AppList {
        position 0 0
        size 1 1
-       Padding 8
-       Margin 8
+       Padding 16
+       Margin 16
       }
      }
     }
     FrameWidgetClass AppContent {
      visible 0
-     position 0.02 0.1
-     size 0.96 0.88
+     position 0.02 0.12
+     size 0.96 0.86
+    }
+    ButtonWidgetClass ExitButton {
+     position 0.855 0.925
+     size 120 40
+     hexactsize 1
+     vexactsize 1
+     color 0.55 0.16 0.14 1
+     style Default
+     {
+      TextWidgetClass ExitLabel {
+       ignorepointer 1
+       position 0 0
+       size 1 1
+       text "EXIT"
+       font "gui/fonts/metron28"
+       "exact text" 1
+       "exact text size" 18
+       "text halign" center
+       "text valign" center
+       color 1 1 1 1
+      }
+     }
+    }
+    TextWidgetClass FooterText {
+     ignorepointer 1
+     position 0.025 0.92
+     size 0.78 0.07
+     text "EZ Tablet v0.9.1  |  Humanity: still disappointing (except LordSausageFinger)"
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 15
+     "text halign" center
+     "text valign" center
+     color 0.55 0.6 0.66 1
     }
    }
   }

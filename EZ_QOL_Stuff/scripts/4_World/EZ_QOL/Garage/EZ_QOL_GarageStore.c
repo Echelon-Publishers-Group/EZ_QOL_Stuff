@@ -90,7 +90,7 @@ class EZ_QOL_GarageStore
 		CarScript car;
 		if (Class.CastTo(car, ent))
 		{
-			dBodySetLinearVelocity(car, vector.Zero);
+			SetVelocity(car, vector.Zero);
 			dBodySetAngularVelocity(car, vector.Zero);
 			EZ_QOL_GarageSidecar sc = LoadSidecar(id);
 			ExpansionVehicle ev = car.GetExpansionVehicle();

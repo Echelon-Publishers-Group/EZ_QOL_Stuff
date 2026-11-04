@@ -1,23 +1,158 @@
 ButtonWidgetClass AppButton {
- size 160 160
+ size 200 248
  hexactsize 1
  vexactsize 1
- color 0.15 0.2 0.25 1
+ color 0 0 0 0
  style Default
  {
-  ImageWidgetClass AppIcon {
+  PanelWidgetClass TileFrame {
    ignorepointer 1
-   position 0.5 0.12
-   size 0.5 0.5
-   halign center_ref
-   mode blend
+   position 10 4
+   size 180 180
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   color 0.95 0.55 0.12 0.9
+   style rover_sim_colorable
+   {
+    PanelWidgetClass Tile {
+     ignorepointer 1
+     position 0.025 0.025
+     size 0.95 0.95
+     color 0.13 0.16 0.2 1
+     style rover_sim_colorable
+     {
+      ImageWidgetClass AppIcon {
+       visible 0
+       ignorepointer 1
+       position 0.19 0.12
+       size 0.62 0.62
+       mode blend
+      }
+      FrameWidgetClass DroneGlyph {
+       visible 0
+       ignorepointer 1
+       position 0.1 0.04
+       size 0.8 0.72
+       {
+        PanelWidgetClass DArmH {
+         ignorepointer 1
+         position 0.22 0.47
+         size 0.56 0.06
+         color 0.85 0.88 0.92 1
+         style rover_sim_colorable
+        }
+        PanelWidgetClass DArmV {
+         ignorepointer 1
+         position 0.47 0.22
+         size 0.06 0.56
+         color 0.85 0.88 0.92 1
+         style rover_sim_colorable
+        }
+        PanelWidgetClass RotorTL {
+         ignorepointer 1
+         position 0.12 0.12
+         size 0.2 0.2
+         color 0.95 0.6 0.18 1
+         style rover_sim_colorable
+        }
+        PanelWidgetClass RotorTLHub {
+         ignorepointer 1
+         position 0.195 0.195
+         size 0.05 0.05
+         color 0.13 0.16 0.2 1
+         style rover_sim_colorable
+        }
+        PanelWidgetClass RotorTR {
+         ignorepointer 1
+         position 0.68 0.12
+         size 0.2 0.2
+         color 0.95 0.6 0.18 1
+         style rover_sim_colorable
+        }
+        PanelWidgetClass RotorTRHub {
+         ignorepointer 1
+         position 0.755 0.195
+         size 0.05 0.05
+         color 0.13 0.16 0.2 1
+         style rover_sim_colorable
+        }
+        PanelWidgetClass RotorBL {
+         ignorepointer 1
+         position 0.12 0.68
+         size 0.2 0.2
+         color 0.95 0.6 0.18 1
+         style rover_sim_colorable
+        }
+        PanelWidgetClass RotorBLHub {
+         ignorepointer 1
+         position 0.195 0.755
+         size 0.05 0.05
+         color 0.13 0.16 0.2 1
+         style rover_sim_colorable
+        }
+        PanelWidgetClass RotorBR {
+         ignorepointer 1
+         position 0.68 0.68
+         size 0.2 0.2
+         color 0.95 0.6 0.18 1
+         style rover_sim_colorable
+        }
+        PanelWidgetClass RotorBRHub {
+         ignorepointer 1
+         position 0.755 0.755
+         size 0.05 0.05
+         color 0.13 0.16 0.2 1
+         style rover_sim_colorable
+        }
+        PanelWidgetClass DBody {
+         ignorepointer 1
+         position 0.37 0.37
+         size 0.26 0.26
+         color 0.95 0.6 0.18 1
+         style rover_sim_colorable
+        }
+        PanelWidgetClass DBodyLens {
+         ignorepointer 1
+         position 0.46 0.46
+         size 0.08 0.08
+         color 0.13 0.16 0.2 1
+         style rover_sim_colorable
+        }
+       }
+      }
+      TextWidgetClass AppGlyph {
+       ignorepointer 1
+       position 0 0.76
+       size 1 0.22
+       text "APP"
+       font "gui/fonts/metron28"
+       "exact text" 1
+       "exact text size" 26
+       "text halign" center
+       "text valign" center
+       color 0.95 0.6 0.18 1
+      }
+     }
+    }
+   }
   }
   TextWidgetClass AppName {
    ignorepointer 1
-   position 0 0.72
-   size 1 0.22
+   position 0 192
+   size 200 48
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
    text "App"
+   font "gui/fonts/sdf_MetronBook24"
+   "exact text" 1
+   "exact text size" 20
    "text halign" center
+   "text valign" center
+   color 1 1 1 1
   }
  }
 }

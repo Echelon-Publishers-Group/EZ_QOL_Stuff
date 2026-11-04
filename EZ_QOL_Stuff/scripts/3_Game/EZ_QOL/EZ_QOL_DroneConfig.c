@@ -123,6 +123,21 @@ class EZ_QOL_DroneConfig
 		if (CrateMaxLifetimeSec <= 0) CrateMaxLifetimeSec = 900;
 		if (windCancelMs <= 0) windCancelMs = 18;
 		if (windWarnMs <= 0) windWarnMs = windCancelMs * 0.66;
+		// v0.11: the shipped category icons are .paa; migrate old profile JSONs that still point at the never-shipped .edds files.
+		if (categories)
+		{
+			foreach (EZ_QOL_DroneConfigCategory sc : categories)
+			{
+				if (!sc)
+					continue;
+				string ic = sc.icon;
+				if (ic.IndexOf("EZ_QOL_Stuff/gui/icons/") == 0 && ic.IndexOf(".edds") > 0)
+				{
+					ic.Replace(".edds", ".paa");
+					sc.icon = ic;
+				}
+			}
+		}
 	}
 
 	// Drops missing classes (warn) and disables categories left empty (warn).
@@ -181,7 +196,7 @@ class EZ_QOL_DroneConfig
 		requireTablet = true;
 
 		EZ_QOL_DroneConfigCategory med = new EZ_QOL_DroneConfigCategory();
-		med.id = "medical"; med.name = "Medical / Surgery"; med.icon = "EZ_QOL_Stuff/gui/icons/medical.edds";
+		med.id = "medical"; med.name = "Medical / Surgery"; med.icon = "EZ_QOL_Stuff/gui/icons/medical.paa";
 		med.price = 2500; med.cooldownSec = 900; med.enabled = true;
 		// Terje Medicine (verified in TerjeBruoygard/TerjeMods TerjeMedicine/*/config.cpp)
 		med.Add("TerjeSurgicalKit", 1);
@@ -203,7 +218,7 @@ class EZ_QOL_DroneConfig
 		categories.Insert(med);
 
 		EZ_QOL_DroneConfigCategory ammo = new EZ_QOL_DroneConfigCategory();
-		ammo.id = "ammo"; ammo.name = "Ammo Drop"; ammo.icon = "EZ_QOL_Stuff/gui/icons/ammo.edds";
+		ammo.id = "ammo"; ammo.name = "Ammo Drop"; ammo.icon = "EZ_QOL_Stuff/gui/icons/ammo.paa";
 		ammo.price = 3000; ammo.cooldownSec = 1200; ammo.enabled = true;
 		ammo.Add("AmmoBox_556x45_20Rnd", 2);
 		ammo.Add("AmmoBox_762x39_20Rnd", 2);
@@ -213,7 +228,7 @@ class EZ_QOL_DroneConfig
 		categories.Insert(ammo);
 
 		EZ_QOL_DroneConfigCategory sur = new EZ_QOL_DroneConfigCategory();
-		sur.id = "surprise"; sur.name = "Surprise"; sur.icon = "EZ_QOL_Stuff/gui/icons/surprise.edds";
+		sur.id = "surprise"; sur.name = "Surprise"; sur.icon = "EZ_QOL_Stuff/gui/icons/surprise.paa";
 		sur.price = 1500; sur.cooldownSec = 1800; sur.pickOne = true; sur.enabled = true;
 		sur.Add("NVGoggles", 1, 1);
 		sur.Add("M4A1", 1, 2);
@@ -223,7 +238,7 @@ class EZ_QOL_DroneConfig
 		categories.Insert(sur);
 
 		EZ_QOL_DroneConfigCategory food = new EZ_QOL_DroneConfigCategory();
-		food.id = "food"; food.name = "Food & Water"; food.icon = "EZ_QOL_Stuff/gui/icons/food.edds";
+		food.id = "food"; food.name = "Food & Water"; food.icon = "EZ_QOL_Stuff/gui/icons/food.paa";
 		food.price = 800; food.cooldownSec = 600; food.enabled = true;
 		food.Add("BakedBeansCan", 2);
 		food.Add("SpaghettiCan", 1);

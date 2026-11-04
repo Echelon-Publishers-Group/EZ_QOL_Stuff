@@ -15,3 +15,15 @@
 - Open each model once in Object Builder: Tools ▸ Check, and look at normals and smoothing (sharp edges are not exported, so smoothing comes from the stored vertex normals).
 - Do an in-game check: scale, rotor spin direction, light position and direction, tablet screen hiddenSelection swap, and geometry and collision. Fix the drone's front if needed.
 - Write the config.cpp (AnimationSources rotor/cargo_attached, hiddenSelections) and sign the PBO yourself.
+
+## v1.0 beta additions (moved from EZLoderScreen + new)
+- **Pineapple farming** (`data/pineapples/`, `scripts/4_World/EZ_QOL/Farming/`). The item classnames are unchanged (EZ_PineappleSeeds, EZ_PineappleSeedsPack, EZ_Plant_Pineapple, EZ_Pineapple, EZ_PineappleSlice), so existing types.xml entries and stored items keep working. EZLoderScreen's "sticky hands" effect is no longer triggered by slicing.
+- **Vehicle flip**: a hold-F action on overturned, empty, engine-off vehicles, plus the F6 keybind (`UAEZQOLFlip`).
+- **Client settings, earplugs and keybinds**: input group "EZ_QOL" with UAEZQOLFlip (F6), UAEZQOLEarplugs (End) and UAEZQOLSettings (Home). The settings menu covers: earplugs enabled, earplug levels, earplug HUD, and flip confirm. Saved to `$profile:EZ_QOL_client.json` on the client. An "EZ QOL settings" button sits in the in-game menu.
+- **Sleeping bag** (EZ_SleepingBag_Packed -> EZ_SleepingBag_Deployed):
+  - Placing a bag binds it to you (max 1).
+  - You respawn at your bag as a fresh spawn. You can optionally be moved to it on an alive login.
+  - Rules and defaults are in `$profile:EZ_QOL/SleepingBagConfig.json`, written on first start; see `SleepingBagConfig.sample.json`. The registry is `$profile:EZ_QOL/SleepingBagRegistry.json`.
+  - Pack, claim and repair (sewing kit) actions.
+  - `types_sleepingbag_snippet.xml` has the CE entries. The models are vanilla placeholders; see SLEEPINGBAG_P3D_REQUESTS.md.
+  - The Expansion spawn-select bridge is optional: it is a separate addon in `optional/EZ_QOL_ExpansionCompat` and is not part of this PBO.

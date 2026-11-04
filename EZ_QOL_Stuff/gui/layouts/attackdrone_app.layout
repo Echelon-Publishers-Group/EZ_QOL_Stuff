@@ -1,0 +1,195 @@
+FrameWidgetClass AttackDroneAppRoot {
+ position 0 0
+ size 1 1
+ hexactpos 0
+ vexactpos 0
+ hexactsize 0
+ vexactsize 0
+ {
+  PanelWidgetClass Background {
+   ignorepointer 1
+   position 0 0
+   size 1 1
+   color 0.06 0.07 0.09 0.88
+   style rover_sim_colorable
+  }
+  PanelWidgetClass HeaderBar {
+   ignorepointer 1
+   position 0 0
+   size 1 0.1
+   color 0.11 0.13 0.16 0.96
+   style rover_sim_colorable
+  }
+  PanelWidgetClass HeaderAccent {
+   ignorepointer 1
+   position 0 0.1
+   size 1 0.005
+   color 0.95 0.55 0.12 1
+   style rover_sim_colorable
+  }
+  TextWidgetClass Title {
+   ignorepointer 1
+   position 0.025 0
+   size 0.45 0.1
+   text "#STR_EZ_QOL_APP_ATTACKDRONE"
+   font "gui/fonts/metron28"
+   "exact text" 1
+   "exact text size" 24
+   "text valign" center
+   color 1 1 1 1
+  }
+  TextWidgetClass BalanceText {
+   ignorepointer 1
+   position 0.48 0
+   size 0.42 0.1
+   text "Balance: -"
+   font "gui/fonts/sdf_MetronBook24"
+   "exact text" 1
+   "exact text size" 17
+   "text halign" right
+   "text valign" center
+   color 0.55 0.9 0.55 1
+  }
+  ButtonWidgetClass CloseButton {
+   visible 0
+   position 0.925 0.02
+   size 0.055 0.06
+   color 0.55 0.16 0.14 1
+   style Default
+   {
+    TextWidgetClass CloseLabel {
+     ignorepointer 1
+     position 0 0
+     size 1 1
+     text "X"
+     font "gui/fonts/metron28"
+     "exact text" 1
+     "exact text size" 18
+     "text halign" center
+     "text valign" center
+    }
+   }
+  }
+  PanelWidgetClass WindBanner {
+   visible 0
+   position 0.025 0.12
+   size 0.95 0.055
+   color 0.75 0.35 0.05 0.92
+   style rover_sim_colorable
+   {
+    TextWidgetClass WindText {
+     ignorepointer 1
+     position 0.015 0
+     size 0.97 1
+     text "#STR_EZ_QOL_AD_BLOCKED"
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 16
+     "text valign" center
+    }
+   }
+  }
+  PanelWidgetClass ListPanel {
+   position 0.025 0.19
+   size 0.95 0.555
+   color 0.03 0.04 0.05 0.92
+   style rover_sim_colorable
+   {
+    TextListboxWidgetClass InfoList {
+     ignorepointer 1
+     position 0.025 0.04
+     size 0.95 0.92
+     lines 10
+     font "gui/fonts/sdf_MetronBook24"
+    }
+   }
+  }
+  PanelWidgetClass FooterBar {
+   ignorepointer 1
+   position 0 0.765
+   size 1 0.235
+   color 0.10 0.12 0.15 0.96
+   style rover_sim_colorable
+  }
+  TextWidgetClass PriceText {
+   ignorepointer 1
+   position 0.025 0.785
+   size 0.4 0.08
+   text "Price: -"
+   font "gui/fonts/metron28"
+   "exact text" 1
+   "exact text size" 20
+   "text valign" center
+   color 1 0.82 0.45 1
+  }
+  TextWidgetClass StatusText {
+   ignorepointer 1
+   position 0.025 0.88
+   size 0.62 0.08
+   text "Idle"
+   font "gui/fonts/sdf_MetronBook24"
+   "exact text" 1
+   "exact text size" 17
+   "text valign" center
+   color 0.8 0.84 0.88 1
+  }
+  PanelWidgetClass CooldownChip {
+   position 0.43 0.795
+   size 0.22 0.06
+   color 0.16 0.45 0.22 0.95
+   style rover_sim_colorable
+   {
+    TextWidgetClass CooldownText {
+     ignorepointer 1
+     position 0 0
+     size 1 1
+     text "Ready"
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 17
+     "text halign" center
+     "text valign" center
+    }
+   }
+  }
+  ButtonWidgetClass CancelButton {
+   visible 0
+   position 0.43 0.875
+   size 0.22 0.075
+   color 0.16 0.19 0.23 1
+   style Default
+   {
+    TextWidgetClass CancelLabel {
+     ignorepointer 1
+     position 0 0
+     size 1 1
+     text "#STR_EZ_QOL_AD_CANCEL"
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 17
+     "text halign" center
+     "text valign" center
+    }
+   }
+  }
+  ButtonWidgetClass ArmButton {
+   position 0.68 0.79
+   size 0.295 0.17
+   color 0.88 0.47 0.08 1
+   style Default
+   {
+    TextWidgetClass ArmLabel {
+     ignorepointer 1
+     position 0 0
+     size 1 1
+     text "#STR_EZ_QOL_AD_ARM"
+     font "gui/fonts/metron28"
+     "exact text" 1
+     "exact text size" 24
+     "text halign" center
+     "text valign" center
+    }
+   }
+  }
+ }
+}

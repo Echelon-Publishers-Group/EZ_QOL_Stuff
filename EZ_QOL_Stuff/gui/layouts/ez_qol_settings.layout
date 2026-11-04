@@ -1,0 +1,100 @@
+FrameWidgetClass EZQOLSettingsRoot {
+ position 0 0
+ size 1 1
+ hexactpos 0
+ vexactpos 0
+ hexactsize 0
+ vexactsize 0
+ {
+  PanelWidgetClass EZQOLBg {
+   ignorepointer 1
+   color 0 0 0 0.85
+   position 0 0
+   size 560 250
+   halign center_ref
+   valign center_ref
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style rover_sim_colorable
+   {
+    TextWidgetClass EZQOLTitle {
+     ignorepointer 1
+     position 0 10
+     size 560 34
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     text "EZ QOL - client settings"
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 22
+     "text halign" center
+     "text valign" center
+    }
+    ButtonWidgetClass EZQOLBtn_EarplugsEnabled {
+     position 20 52
+     size 520 32
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.2 0.6 1 0.35
+     text "EarplugsEnabled"
+     font "gui/fonts/sdf_MetronBook24"
+     "text size" 16
+    }
+    ButtonWidgetClass EZQOLBtn_Earplugs {
+     position 20 90
+     size 520 32
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.2 0.6 1 0.35
+     text "Earplugs"
+     font "gui/fonts/sdf_MetronBook24"
+     "text size" 16
+    }
+    ButtonWidgetClass EZQOLBtn_EarplugHud {
+     position 20 128
+     size 520 32
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.2 0.6 1 0.35
+     text "EarplugHud"
+     font "gui/fonts/sdf_MetronBook24"
+     "text size" 16
+    }
+    ButtonWidgetClass EZQOLBtn_FlipConfirm {
+     position 20 166
+     size 520 32
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.2 0.6 1 0.35
+     text "FlipConfirm"
+     font "gui/fonts/sdf_MetronBook24"
+     "text size" 16
+    }
+    ButtonWidgetClass EZQOLBtn_Close {
+     position 20 204
+     size 520 32
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     color 0.2 0.6 1 0.35
+     text "Close"
+     font "gui/fonts/sdf_MetronBook24"
+     "text size" 16
+    }
+   }
+  }
+ }
+}

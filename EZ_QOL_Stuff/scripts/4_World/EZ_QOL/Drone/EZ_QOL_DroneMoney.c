@@ -53,7 +53,21 @@ class EZ_QOL_DroneMoneyExpansion: EZ_QOL_DroneMoney
 			return false;
 		if (GetBalance(player) < amount)
 			return false;
-		return m.RemoveMoney(amount, player);
+		// Expansion API: reserve exact coins, RemoveMoney(player) deletes reserved, refund change (ATM deposit pattern).
+		array<int> monies = new array<int>;
+		if (!m.FindMoneyAndCountTypes(player, amount, monies, true, NULL, NULL, true))
+		{
+			m.UnlockMoney(player);
+			return false;
+		}
+		EntityAI parent = player;
+		int removed = m.RemoveMoney(player);
+		if (removed - amount > 0)
+		{
+			m.SpawnMoney(player, parent, removed - amount, true, NULL, NULL, true);
+			m.CheckSpawn(player, parent);
+		}
+		return removed >= amount;
 	}
 
 	// ExpansionMarketModule.SpawnMoney(player, inout parent, amount, useExistingStacks, marketItem, trader, isATM)

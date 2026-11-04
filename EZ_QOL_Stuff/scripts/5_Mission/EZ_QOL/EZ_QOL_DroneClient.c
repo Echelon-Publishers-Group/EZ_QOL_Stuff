@@ -61,17 +61,23 @@ class EZ_QOL_DroneClient
 		NotificationSystem.AddNotificationExtended(6, "Drone Delivery", text, "set:dayz_gui image:icon_info");
 	}
 
-	void EZ_QOL_Drone_Catalog(CallType type, ParamsReadContext ctx, PlayerIdentity sender, Object target)
+	void EZ_QOL_Drone_Catalog2(CallType type, ParamsReadContext ctx, PlayerIdentity sender, Object target)
 	{
 		if (type != CallType.Client)
 			return;
-		Param1<string> data;
-		if (!ctx.Read(data))
+		Param1<ref array<string>> data = new Param1<ref array<string>>(null);
+		if (!ctx.Read(data) || !data.param1)
+		{
+			Print("[EZ_QOL Drone] catalog read failed");
 			return;
+		}
+		string json = "";
+		for (int i = 0; i < data.param1.Count(); i++)
+			json = json + data.param1[i];
 		EZ_QOL_DroneCatalog cat = new EZ_QOL_DroneCatalog();
 		string err;
 		JsonSerializer js = new JsonSerializer();
-		if (!js.ReadFromString(cat, data.param1, err))
+		if (!js.ReadFromString(cat, json, err))
 		{
 			Print("[EZ_QOL Drone] catalog parse error: " + err);
 			return;

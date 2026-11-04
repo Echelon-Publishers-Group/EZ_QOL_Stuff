@@ -1,0 +1,16 @@
+TextWidgetClass EZQOLEarHud {
+ ignorepointer 1
+ position 20 120
+ size 160 24
+ halign left_ref
+ valign bottom_ref
+ hexactpos 1
+ vexactpos 1
+ hexactsize 1
+ vexactsize 1
+ color 0.24 0.66 1 0.9
+ text "EARPLUGS 50%"
+ font "gui/fonts/sdf_MetronBook24"
+ "exact text" 1
+ "exact text size" 16
+}

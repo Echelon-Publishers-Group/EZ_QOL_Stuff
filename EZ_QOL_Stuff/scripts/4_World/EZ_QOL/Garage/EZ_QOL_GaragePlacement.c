@@ -26,8 +26,8 @@ class EZ_QOL_GaragePlacement
 		Math3D.YawPitchRollMatrix(Vector(ori[0], 0, 0), mat);
 		float hx = EZ_QOL_GARAGE_WIDTH * 0.5;
 		float hz = EZ_QOL_GARAGE_LENGTH * 0.5;
-		array<vector> local = {Vector(-hx, 0, -hz), Vector(hx, 0, -hz), Vector(-hx, 0, hz), Vector(hx, 0, hz), Vector(0, 0, 0)};
-		foreach (vector l : local)
+		array<vector> ezCorners = {Vector(-hx, 0, -hz), Vector(hx, 0, -hz), Vector(-hx, 0, hz), Vector(hx, 0, hz), Vector(0, 0, 0)};
+		foreach (vector l : ezCorners)
 		{
 			vector w = pos + l[0] * mat[0] + l[2] * mat[2];
 			w[1] = GetGame().SurfaceY(w[0], w[2]);
@@ -54,15 +54,17 @@ class EZ_QOL_GaragePlacement
 		// slope: steepest side of the footprint
 		array<vector> c;
 		Corners(pos, ori, c);
-		float pitch = Math.Atan2(((c[2][1] + c[3][1]) - (c[0][1] + c[1][1])) * 0.5, EZ_QOL_GARAGE_LENGTH) * Math.RAD2DEG;
-		float roll  = Math.Atan2(((c[1][1] + c[3][1]) - (c[0][1] + c[2][1])) * 0.5, EZ_QOL_GARAGE_WIDTH) * Math.RAD2DEG;
+		vector c0 = c[0]; vector c1 = c[1]; vector c2 = c[2]; vector c3 = c[3];
+		float y0 = c0[1]; float y1 = c1[1]; float y2 = c2[1]; float y3 = c3[1];
+		float pitch = Math.Atan2(((y2 + y3) - (y0 + y1)) * 0.5, EZ_QOL_GARAGE_LENGTH) * Math.RAD2DEG;
+		float roll  = Math.Atan2(((y1 + y3) - (y0 + y2)) * 0.5, EZ_QOL_GARAGE_WIDTH) * Math.RAD2DEG;
 		if (Math.AbsFloat(pitch) > cfg.MaxSlopeDeg || Math.AbsFloat(roll) > cfg.MaxSlopeDeg)
 		{
 			reasonKey = EZ_QOL_Reason.SLOPE;
 			detail = Math.Round(Math.Max(Math.AbsFloat(pitch), Math.AbsFloat(roll))).ToString();
 			return false;
 		}
-		float avgY = (c[0][1] + c[1][1] + c[2][1] + c[3][1]) * 0.25;
+		float avgY = (y0 + y1 + y2 + y3) * 0.25;
 		alignedPos = Vector(pos[0], avgY, pos[2]);
 		alignedOri = Vector(ori[0], -pitch, roll); // UNVERIFIED sign convention, check in game
 

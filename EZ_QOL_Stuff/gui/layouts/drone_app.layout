@@ -1,89 +1,250 @@
 FrameWidgetClass DroneAppRoot {
- position 0 0
- size 1 1
+ position 0.2 0.15
+ size 0.6 0.7
  hexactpos 0
  vexactpos 0
  hexactsize 0
  vexactsize 0
  {
   PanelWidgetClass Background {
+   ignorepointer 1
    position 0 0
    size 1 1
-   color 0.08 0.1 0.12 0.95
+   color 0.06 0.07 0.09 0.88
+   style rover_sim_colorable
+  }
+  PanelWidgetClass HeaderBar {
+   ignorepointer 1
+   position 0 0
+   size 1 0.1
+   color 0.11 0.13 0.16 0.96
+   style rover_sim_colorable
+  }
+  PanelWidgetClass HeaderAccent {
+   ignorepointer 1
+   position 0 0.1
+   size 1 0.005
+   color 0.95 0.55 0.12 1
    style rover_sim_colorable
   }
   TextWidgetClass Title {
-   position 0.03 0.02
-   size 0.6 0.07
+   ignorepointer 1
+   position 0.025 0
+   size 0.45 0.1
    text "Drone Delivery"
    font "gui/fonts/metron28"
+   "exact text" 1
+   "exact text size" 24
+   "text valign" center
+   color 1 1 1 1
   }
   TextWidgetClass BalanceText {
-   position 0.62 0.02
-   size 0.35 0.07
+   ignorepointer 1
+   position 0.48 0
+   size 0.42 0.1
    text "Balance: -"
+   font "gui/fonts/sdf_MetronBook24"
+   "exact text" 1
+   "exact text size" 17
    "text halign" right
+   "text valign" center
+   color 0.55 0.9 0.55 1
+  }
+  ButtonWidgetClass CloseButton {
+   visible 0
+   position 0.925 0.02
+   size 0.055 0.06
+   color 0.55 0.16 0.14 1
+   style Default
+   {
+    TextWidgetClass CloseLabel {
+     ignorepointer 1
+     position 0 0
+     size 1 1
+     text "X"
+     font "gui/fonts/metron28"
+     "exact text" 1
+     "exact text size" 18
+     "text halign" center
+     "text valign" center
+    }
+   }
   }
   PanelWidgetClass WindBanner {
    visible 0
-   position 0.03 0.1
-   size 0.94 0.06
-   color 0.75 0.35 0.05 0.9
+   position 0.025 0.12
+   size 0.95 0.055
+   color 0.75 0.35 0.05 0.92
    style rover_sim_colorable
    {
     TextWidgetClass WindText {
-     position 0.01 0
-     size 0.98 1
+     ignorepointer 1
+     position 0.015 0
+     size 0.97 1
      text "High wind / sandstorm"
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 16
      "text valign" center
     }
    }
   }
   ButtonWidgetClass Tab0 {
-   position 0.03 0.18
-   size 0.225 0.07
-   text "Medical"
+   position 0.025 0.19
+   size 0.23 0.065
+   color 0.16 0.19 0.23 1
+   style Default
+   {
+    TextWidgetClass Tab0Label {
+     ignorepointer 1
+     position 0.04 0
+     size 0.92 1
+     text "Medical"
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 17
+     "text halign" center
+     "text valign" center
+    }
+   }
   }
   ButtonWidgetClass Tab1 {
-   position 0.268 0.18
-   size 0.225 0.07
-   text "Ammo"
+   position 0.265 0.19
+   size 0.23 0.065
+   color 0.16 0.19 0.23 1
+   style Default
+   {
+    TextWidgetClass Tab1Label {
+     ignorepointer 1
+     position 0.04 0
+     size 0.92 1
+     text "Ammo"
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 17
+     "text halign" center
+     "text valign" center
+    }
+   }
   }
   ButtonWidgetClass Tab2 {
-   position 0.506 0.18
-   size 0.225 0.07
-   text "Surprise"
+   position 0.505 0.19
+   size 0.23 0.065
+   color 0.16 0.19 0.23 1
+   style Default
+   {
+    TextWidgetClass Tab2Label {
+     ignorepointer 1
+     position 0.04 0
+     size 0.92 1
+     text "Surprise"
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 17
+     "text halign" center
+     "text valign" center
+    }
+   }
   }
   ButtonWidgetClass Tab3 {
-   position 0.744 0.18
-   size 0.225 0.07
-   text "Food"
+   position 0.745 0.19
+   size 0.23 0.065
+   color 0.16 0.19 0.23 1
+   style Default
+   {
+    TextWidgetClass Tab3Label {
+     ignorepointer 1
+     position 0.04 0
+     size 0.92 1
+     text "Food"
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 17
+     "text halign" center
+     "text valign" center
+    }
+   }
   }
-  TextListboxWidgetClass ItemList {
-   position 0.03 0.27
-   size 0.94 0.45
-   lines 10
+  PanelWidgetClass ListPanel {
+   position 0.025 0.275
+   size 0.95 0.47
+   color 0.03 0.04 0.05 0.92
+   style rover_sim_colorable
+   {
+    TextListboxWidgetClass ItemList {
+     position 0.025 0.04
+     size 0.95 0.92
+     lines 10
+     font "gui/fonts/sdf_MetronBook24"
+    }
+   }
+  }
+  PanelWidgetClass FooterBar {
+   ignorepointer 1
+   position 0 0.765
+   size 1 0.235
+   color 0.10 0.12 0.15 0.96
+   style rover_sim_colorable
   }
   TextWidgetClass PriceText {
-   position 0.03 0.74
-   size 0.45 0.06
+   ignorepointer 1
+   position 0.025 0.785
+   size 0.4 0.08
    text "Price: -"
-  }
-  TextWidgetClass CooldownText {
-   position 0.52 0.74
-   size 0.45 0.06
-   text "Ready"
-   "text halign" right
+   font "gui/fonts/metron28"
+   "exact text" 1
+   "exact text size" 20
+   "text valign" center
+   color 1 0.82 0.45 1
   }
   TextWidgetClass StatusText {
-   position 0.03 0.81
-   size 0.94 0.06
+   ignorepointer 1
+   position 0.025 0.88
+   size 0.62 0.08
    text "Idle"
+   font "gui/fonts/sdf_MetronBook24"
+   "exact text" 1
+   "exact text size" 17
+   "text valign" center
+   color 0.8 0.84 0.88 1
+  }
+  PanelWidgetClass CooldownChip {
+   position 0.43 0.795
+   size 0.22 0.06
+   color 0.16 0.45 0.22 0.95
+   style rover_sim_colorable
+   {
+    TextWidgetClass CooldownText {
+     ignorepointer 1
+     position 0 0
+     size 1 1
+     text "Ready"
+     font "gui/fonts/sdf_MetronBook24"
+     "exact text" 1
+     "exact text size" 17
+     "text halign" center
+     "text valign" center
+    }
+   }
   }
   ButtonWidgetClass OrderButton {
-   position 0.3 0.89
-   size 0.4 0.08
-   text "ORDER"
+   position 0.68 0.79
+   size 0.295 0.17
+   color 0.88 0.47 0.08 1
+   style Default
+   {
+    TextWidgetClass OrderLabel {
+     ignorepointer 1
+     position 0 0
+     size 1 1
+     text "ORDER"
+     font "gui/fonts/metron28"
+     "exact text" 1
+     "exact text size" 24
+     "text halign" center
+     "text valign" center
+    }
+   }
   }
  }
 }

@@ -152,7 +152,21 @@ class EZ_QOL_DroneManager
 		string json;
 		JsonSerializer js = new JsonSerializer();
 		js.WriteToString(cat, false, json);
-		GetRPCManager().SendRPC(EZ_QOL_DRONE_RPC_NS, EZ_QOL_RPC_DRONE_CATALOG, new Param1<string>(json), true, sender);
+		// One long string in a Param made the client VM fail in ctx.Read ("String CORRUPTED") and hang.
+		// Send the JSON as short chunks instead; the client joins them.
+		array<string> chunks = new array<string>;
+		int total = json.Length();
+		int pos = 0;
+		while (pos < total)
+		{
+			int n = EZ_QOL_DRONE_CATALOG_CHUNK;
+			if (pos + n > total)
+				n = total - pos;
+			chunks.Insert(json.Substring(pos, n));
+			pos = pos + n;
+		}
+		EZ_QOL_DroneLog.Info("Catalog -> " + sender.GetName() + " balance=" + cat.balance.ToString() + " json=" + total.ToString() + "b chunks=" + chunks.Count().ToString());
+		GetRPCManager().SendRPC(EZ_QOL_DRONE_RPC_NS, EZ_QOL_RPC_DRONE_CATALOG, new Param1<ref array<string>>(chunks), true, sender);
 	}
 
 	protected string DisplayName(string cls)
@@ -252,7 +266,7 @@ class EZ_QOL_DroneManager
 		if (!o)
 		{
 			bool refunded = m_Money.Refund(player, charged);
-			EZ_QOL_DroneLog.Err("Drone spawn failed for " + who + " cat=" + catId + "; refund " + charged + " ok=" + refunded);
+			EZ_QOL_DroneLog.Err("Drone spawn failed for " + who + " cat=" + catId + "; refund " + charged + " ok=" + refunded.ToString());
 			if (!refunded)
 				EZ_QOL_DroneLog.Err("REFUND OWED " + who + " amount=" + charged);
 			SendResult(sender, false, "Drone failed to launch (refunded)", 0);
@@ -298,7 +312,9 @@ class EZ_QOL_DroneManager
 
 		float ang = Math.RandomFloat(0, Math.PI2);
 		o.home = o.target + Vector(Math.Cos(ang) * cfg.spawnDistance, 0, Math.Sin(ang) * cfg.spawnDistance);
-		o.home[1] = GroundY(o.home) + o.altitude;
+		vector ezHome = o.home;
+		float ezHomeY = GroundY(ezHome) + o.altitude;
+		o.home = Vector(ezHome[0], ezHomeY, ezHome[2]);
 		vector toTarget = o.target - o.home;
 		toTarget[1] = 0;
 		vector yprStart = toTarget.Normalized().VectorToAngles();
@@ -462,7 +478,7 @@ class EZ_QOL_DroneManager
 			if (o.identity)
 				owner = PlayerBase.Cast(o.identity.GetPlayer());
 			bool ok = m_Money.Refund(owner, o.charged);
-			EZ_QOL_DroneLog.Info("Crash refund " + o.playerName + " amount=" + o.charged + " ok=" + ok);
+			EZ_QOL_DroneLog.Info("Crash refund " + o.playerName + " amount=" + o.charged + " ok=" + ok.ToString());
 			if (!ok)
 				EZ_QOL_DroneLog.Err("REFUND OWED " + o.playerName + " (" + o.uid + ") amount=" + o.charged);
 		}
@@ -476,7 +492,8 @@ class EZ_QOL_DroneManager
 		EZ_QOL_DroneConfig cfg = EZ_QOL_DroneConfig.Get();
 		EZ_QOL_DroneConfigCategory cat = cfg.FindCategory(o.categoryId);
 		vector ezPos = o.drone.EZ_QOL_GetCargoDropWorld();
-		ezPos[1] = GroundY(ezPos);
+		float ezGroundY = GroundY(ezPos);
+		ezPos[1] = ezGroundY;
 		o.drone.EZ_QOL_SetCargoAttached(false);
 
 		EZ_QOL_DroneCrate crate;
@@ -510,7 +527,7 @@ class EZ_QOL_DroneManager
 			if (Class.CastTo(marker, smoke))
 				marker.EZ_QOL_Activate();
 		}
-		EZ_QOL_DroneLog.Info("Crate for " + o.playerName + " at " + ezPos.ToString() + " items=" + spawned + " crashed=" + crashed);
+		EZ_QOL_DroneLog.Info("Crate for " + o.playerName + " at " + ezPos.ToString() + " items=" + spawned + " crashed=" + crashed.ToString());
 	}
 
 	protected int FillItem(EZ_QOL_DroneCrate crate, string cls, int qty)
